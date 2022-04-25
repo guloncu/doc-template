@@ -6,8 +6,6 @@ NAME OF DEVICE
 
 **Date**: |today|
 
-.. **Download documentation**: `PDF Version <open-ephys-documentation.pdf>`__ | `Zipped HTML <open-ephys-documentation.zip>`__
-
 This site provides documentation for [INSERT PROJECT HERE], that [SHORT DESCRIPTION OF STUFF PROJECT DOES].
 
 It is currently under construction
