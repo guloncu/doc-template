@@ -20,7 +20,7 @@ How to use this template
 
 - This will trigger the remote build, and the generation of the branch 'gh-pages'.
 
-- On the Github repo, navigate to Settings/ Pages. Select Source: Deploy from a branch and select the branch gh=pages / root. Save!
+- Once the 'gh-pages' branch exists, on the Github repo, navigate to Settings/ Pages. Select Source: Deploy from a branch and select the branch gh=pages / root. Save!
 
 - Your page should start building; once it's done check it looks as expected.
 
