@@ -92,6 +92,21 @@ Exit the virtualenv with
 
    exit
 
+
+Troubleshooting 
+######################################
+
+If the gh-pages branch is not automatically made, the build will fail and complain that there is no such branch. In that case, make an empty branch 
+
+.. code:: make empty branch
+
+  git checkout --orphan gh-pages
+  git reset --hard
+  git commit --allow-empty -m "Initialising gh-pages branch"
+  git push origin gh-pages
+  git checkout main
+
+
 Acknowledgements
 ####################################
 
