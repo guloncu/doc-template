@@ -3,15 +3,30 @@ Template for Open Ephys Documentation
 *************************************************
 This template is for building documentation of Open Ephys devices or software.
 
-How to use this template
+What is this template
 ####################################
 The documentation files are written in reStructuredText and saved in the 'source' folder. Sphinx is a documentation generator that converts these .rst files to HTML, so that browsers can display them. This sphinx 'build' can be performed locally so that you can preview pages in a browser, or it can be done by github remotely (see below for build instructions).
 
-Sphinx is a Python project, and each site relies on a specific list of python packages. These are listed in the Pipfile so that local or remote builds know which packages to install. This project uses pipenv, allowing the user to create a virtual environment in which the correct version of all required packages is installed (see 'local build').
+Sphinx is a Python project, and each sphinx site relies on a specific list of python packages. These are listed in the Pipfile so that local or remote builds know which packages to install. This project uses pipenv, allowing the user to create a virtual environment in which the correct version of all required packages is installed (see 'local build').
+
+How to use this template
+####################################
+
+- Click the green 'use this template' button to make a new repo. Keep in mind Github pages can only be built from public repos.
+
+- You probably want to clone this new repository to your local computer.
+
+- Make the changes described below under 'What to customize' and commit these changes to GitHub.
+
+- This will trigger the remote build, and the generation of the branch 'gh-pages'.
+
+- On the Github repo, navigate to Settings/ Pages. Select Source: Deploy from a branch and select the branch gh=pages / root. Save!
+
+- Your page should start building; once it's done check it looks as expected.
 
 What to customize
 ####################################
-Each documentation page is saved as an individual .rst file in the 'source' folder. Docs are written primarily in reStructuredText, and HTML can be used within the .rst file. Images are saved under _static. Besides obviously customizing the content of the pages, you will need to make sure to update:
+Each documentation page is saved as an individual .rst file in the 'source' folder. Docs are written primarily in reStructuredText, and HTML can be used within the .rst file. Images are saved under _static. Assuming you are making a new Open Ephys Doc site, besides obviously customizing the content of the pages, you will need to make sure to update:
 
 * License (at end of primary index page)
 * conf.py:
@@ -27,13 +42,15 @@ Each documentation page is saved as an individual .rst file in the 'source' fold
 * .github/workflows/sphinx-build.yml
    * git clone https://github.com/open-ephys/doc-template.git # change to your repo
 
+If you are using this template for your own device outside of Open Ephys you will need to edit more of the conf.py file.
+
 Building remotely
 *************************************************
 Pushing to the main branch of the repo triggers GitHub Actions. Gh-actions will generate a virtual environment, build the HTML pages, and then commit and push these to the 'gh-pages' branch, by following the instructions under .github/workflows/sphinx-build. Finally, if under repo settings gh pages is enabled and points to 'gh-pages/docs, the docs site will be generated.
 
 Building locally
 *************************************************
-Building HTML files locally allows you to preview changes.
+Building HTML files locally allows you to preview changes before updating the live site. We recommend working with 'virtual environments' in which you can install the (versions of the) python packages that the site needs, without messing up your own installs. Here's how:
 
 With pipenv (recommended)
 -------------------------------------------------
@@ -52,14 +69,7 @@ Create a virtual environment with pipenv (will use the Pipfile for installing th
 
    pipenv install
 
-then you can build the documentation
-
-.. code:: shell
-
-   pipenv run make html
-
-if you want run ``make`` multiple times, prepend ``pipenv run`` on each command can be annoying,
-you can spawn a subshell with
+You can then spawn a subshell with
 
 .. code:: shell
 
@@ -76,26 +86,11 @@ and then you can use ``make`` the usual way
 
 all the outputs will be in docs folder (for html: docs/html)
 
-without pipenv/virtualenv
--------------------------------------------------
-Requirements (system):
+Exit the virtualenv with
 
-* make
+.. code:: exit
 
-Requirements (Python 3):
-
-* sphinx
-* sphinx-rtd-theme
-* sphinxcontrib-wavedrom
-
-After installing the requirements you can run
-
-.. code:: shell
-
-   make html     # for html
-   make latex    # for latex
-   make latexpdf # for latex (will require latexpdf installed)
-   make          # list all the available output format
+   exit
 
 Acknowledgements
 ####################################
