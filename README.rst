@@ -28,16 +28,18 @@ What to customize
 ####################################
 Each documentation page is saved as an individual .rst file in the 'source' folder. Docs are written primarily in reStructuredText, and HTML can be used within the .rst file. Images are saved under _static. Assuming you are making a new Open Ephys Doc site, besides obviously customizing the content of the pages, you will need to make sure to update:
 
-* License (at end of primary index page)
+* source/index.rst
+   * Change License text at the end as appropriate
 * conf.py:
    * project = "OE docs"  # change to your project name
+   * "github_user": "open-ephys",  # change to the GitHub username from which the page will be deployed
    * "github_repo": "doc-template",  # change to new repo
    * html_logo = "_static/images/oe_logo_template.svg" # change to svg with your logo
 
       Change the device name on the logo "oe_logo_name.svg"
       Miso, Bold, 36 pt, Kerning: Optical
       Be sure to expand text before saving as .svg as Miso will not load as font.
-* theme_overrides.css
+* source_static/theme_overrides.css
    * Change overhead navigation bar colour (.navbar { background: yourfavecolour })
 * .github/workflows/sphinx-build.yml
    * git clone https://github.com/open-ephys/doc-template.git # change to your repo
@@ -46,7 +48,7 @@ If you are using this template for your own device outside of Open Ephys you wil
 
 Building remotely
 *************************************************
-Pushing to the main branch of the repo triggers GitHub Actions. Gh-actions will generate a virtual environment, build the HTML pages, and then commit and push these to the 'gh-pages' branch, by following the instructions under .github/workflows/sphinx-build. Finally, if under repo settings gh pages is enabled and points to 'gh-pages/docs, the docs site will be generated.
+Pushing to the main branch of the repo triggers GitHub Actions. Gh-actions will generate a virtual environment, build the HTML pages, and then commit and push these to the 'gh-pages' branch, by following the instructions under .github/workflows/sphinx-build. Finally, if under repo settings gh pages is enabled and is set to be deployed from the 'gh-pages' branch, the docs site will be generated at https://username.github.io/reponame. To activate gh pages, go to your repo settings, Pages menu, and under "Build and Deployment", choose gh-pages in the dropdown menu. It should say "Your GitHub Pages sites is currently being built from the gh-pages branch".
 
 Building locally
 *************************************************
