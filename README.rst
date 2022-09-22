@@ -98,6 +98,7 @@ Exit the virtualenv with
 Troubleshooting 
 ######################################
 
+No gh-pages branch? 
 If the gh-pages branch is not automatically made, the build will fail and complain that there is no such branch. In that case, make an empty branch as follows: 
 
 .. code:: empty
@@ -107,6 +108,9 @@ If the gh-pages branch is not automatically made, the build will fail and compla
   git commit --allow-empty -m "Initialising gh-pages branch"
   git push origin gh-pages
   git checkout main
+  
+Error while building? 
+By default github pages `will use Jekyll <https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages#static-site-generators>`_ to generate a static site. To override this, check that there is a .nojekyll file in the gh-pages branch (just an empty file called '.nojekyll'). 
 
 
 Acknowledgements
