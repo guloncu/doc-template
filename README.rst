@@ -52,9 +52,10 @@ Each site should include the Open Ephys logo in the navigation bar, with custom 
 - Make sure you have the font `Sofia Sans Extra Condensed <https://fonts.google.com/specimen/Sofia+Sans+Extra+Condensed>`_ installed on your system.
 - Open :code:`navbar_logo_template.pdf` in Adobe Illustrator or Inkscape
 - Create a new layer for the current project
-- Copy and paste one of the project names into the new layer, in the same location as the original name (ctrl-shift-V in Illustrator)
+- Copy and paste the "Copy Me" text into the new layer, in the same location as the original name (ctrl-shift-V in Illustrator)
 - Change the name displayed in the new layer
-- Hide all layers except "Circle", "Logo", and the layer with the new name. The name should disappear, as the background should be hidden as well.
+- Expand the text into an outline ("Object" > "Expand..." in Illustrator)
+- Hide all layers except "Circle", "Logo", and the layer containing the new name. The white letters of the name should disappear, as the background should be hidden as well.
 - Choose "Export as..." and select "SVG". Name the file :code:`oe_logo_name.svg`. **Important** Do not "Save as..." an SVG, as this will remove the transparency in the logo. Instead, the original file should remain in PDF format. 
 
 
