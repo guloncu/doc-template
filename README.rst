@@ -34,9 +34,13 @@ Each documentation page is saved as an individual .rst file in the :code:`source
    * Change the content of the HTML "cards"
 * conf.py:
    * project = "OE docs"  # change to your project name
-   * "github_user": "open-ephys",  # change to the GitHub username from which the page will be deployed
-   * "github_repo": "doc-template",  # change to new repo
    * html_logo = "_static/images/oe_logo_name.svg" # change to svg with your logo (see instructions below)
+   * "html_theme_options"
+      * "external_links" # change name to "Purchase" or "Download" (depending on whether it's a device or software) and change URL to the store link
+      * "icon_links" # change GitHub link to the source for this device or software
+   * "html_context"
+      * "github_user": "open-ephys",  # change to the GitHub username from which the page will be deployed
+      * "github_repo": "doc-template",  # change to new repo
 * source_static/theme_overrides.css
    * Change overhead navigation bar colour (.navbar { background: yourfavecolour })
 * .github/workflows/sphinx-build.yml

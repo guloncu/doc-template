@@ -186,9 +186,10 @@ html_theme_options = {
     "navbar_end": ["navbar-icon-links"],
     "navbar_align": "content",
     "footer_start": ["copyright"],
+     "external_links": [{"name": "Open Ephys", "url": "https://open-ephys.org"},],
     'icon_links': [
         dict(name='GitHub',
-             url='https://github.com/open-ephys/commutator-docs',
+             url='https://github.com/open-ephys/doc-template',
              icon='fab fa-github'),
         dict(name='Twitter',
              url='https://twitter.com/openephys',

@@ -133,6 +133,11 @@ a.headerlink:hover {
   transition-duration: 0.2s;
 }
 
+/* paragraph indent */
+p {
+  text-indent: 1em;
+}
+
 /* text fonts and colors */
 body {
   background-color: white;
